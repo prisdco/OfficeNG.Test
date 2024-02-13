@@ -1,0 +1,101 @@
+<br><br>
+<!-- Single Product Start -->
+<div class="container-fluid py-5 mt-5">
+    <div class="container py-5">
+        <div class="row g-4 mb-5">
+            <div class="col-lg-8 col-xl-9">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="border rounded">
+                            <a href="#">
+                                <img src="{{movieDetails['Value'].Poster}}" class="img-fluid rounded" alt="Image">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="fw-bold mb-3">{{movieDetails['Value'].Title}}</h4>
+                        <p class="mb-3">Category: {{movieDetails['Value'].Genre}}</p>
+                        <h5 class="fw-bold mb-3">Rate: {{movieDetails['Value'].Rated}}</h5>
+                        <div class="d-flex mb-4">
+                            <i class="fa fa-star text-secondary"></i>
+                            <i class="fa fa-star text-secondary"></i>
+                            <i class="fa fa-star text-secondary"></i>
+                            <i class="fa fa-star text-secondary"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="mb-3">Released: {{movieDetails['Value'].Released}}</p>
+                        <p class="mb-3">Runtime: {{movieDetails['Value'].Runtime}}</p>
+                        <p class="mb-3">Director: {{movieDetails['Value'].Director}}</p>
+                       </div>
+                    <div class="col-lg-12">
+                        <nav>
+                            <div class="nav nav-tabs mb-3">
+                                <button class="nav-link active border-white border-bottom-0" type="button" role="tab"
+                                    id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about"
+                                    aria-controls="nav-about" aria-selected="true">Description</button>
+                                
+                            </div>
+                        </nav>
+                        <div class="tab-content mb-5">
+                            <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                                {{movieDetails['Value'].Plot}}
+                                
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <form action="#">
+                        <h4 class="mb-5 fw-bold">Leave a Review</h4>
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="border-bottom rounded">
+                                    <input type="text" class="form-control border-0 me-4" placeholder="Yur Name *">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="border-bottom rounded">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email *">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="border-bottom rounded my-4">
+                                    <textarea name="" id="" class="form-control border-0" cols="30" rows="8" placeholder="Your Review *" spellcheck="false"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="d-flex justify-content-between py-3 mb-5">
+                                   
+                                    <a href="Detail" class="btn border border-secondary text-primary rounded-pill px-4 py-3"> Post Comment</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xl-3">
+                <div class="row g-4 fruite">
+                    <div class="col-lg-12">
+                        
+                        <div class="mb-4">
+                            <h4>Popular Searches</h4>
+                            <ul class="list-unstyled fruite-categorie" *ngFor="let search of GetQueryParam">
+                                <li>
+                                    <div class="d-flex justify-content-between fruite-name">
+                                        <a href="#" [routerLink]="['/home', search]"><i class="fas fa-apple-alt me-2"></i>{{search}}</a>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+<!-- Single Product End -->
+
